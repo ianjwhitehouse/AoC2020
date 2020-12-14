@@ -1,11 +1,9 @@
 # Common Inputs
 import string;
 import os;
+from math import gcd;
+from functools import reduce;
 from numpy import prod;
-from copy import deepcopy;
-from math import cos, sin, degrees, radians, gcd;
-from numpy import prod;
-
 
 
 # Classes and functions
@@ -121,24 +119,25 @@ def getRangeOfNumbsThatSum(lst, sSum, max=100):
 	return False;
 
 
-def flatten(lst):
-	flatList = []
-	if type(lst) == list:
-		for i in range(len(lst)):
-			flatList += flatten(lst[i]);
-	else:
-		flatList.append(lst);
-	return flatList;
+def betterAllModulusZero(lst, value):
+	if lst[0][0] % (value + lst[0][1])  == 0:
+		if len(lst) == 1:
+			return True;
+		return betterAllModulusZero(lst[1:], value);
+	return False;
 
 
-# END OF PREDEFINED FUNCTIONS
-
-
+def find_lcm(lst):
+	lcm = lst[0];
+	for i in lst[1:]:
+		lcm = (lcm * i)//gcd(lcm, i);
+	return lcm;
 
 # Main Method
 # Load File
-sampleText = """""".split("\n")
-with open("day12.txt") as f:
+sampleText = """939
+7,13,x,x,59,x,31,19""".split("\n")
+with open("day13.txt") as f:
 	fInput = [sampleText, f.readlines()];
 
 # Main method
@@ -150,8 +149,23 @@ for text in fInput:
 	answer = 0;
 	# END OF PREDEFINED
 
-	# Main code here
 
+	curTime = 1;
+	busses = text[1].split(",");
+	newBusses = []
+	for bus in busses:
+		try:
+			newBusses.append([int(bus), busses.index(bus)]);
+		except:
+			pass;
+	# newBusses = sorted(newBusses, key=lambda bus: bus[0] + bus[1]);
+	busses = newBusses[:];
+	allPeriods = 1;
+	answer = 0;
+	for period, shift in busses:
+		while (answer + shift) % period != 0:
+			answer += allPeriods;
+		allPeriods *= period;
 	# BEGINNING OF PREDEFINED
 	print(answer);
 

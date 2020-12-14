@@ -1,11 +1,7 @@
 # Common Inputs
 import string;
 import os;
-from numpy import prod;
-from copy import deepcopy;
-from math import cos, sin, degrees, radians, gcd;
-from numpy import prod;
-
+from itertools import chain;
 
 
 # Classes and functions
@@ -131,14 +127,39 @@ def flatten(lst):
 	return flatList;
 
 
-# END OF PREDEFINED FUNCTIONS
+def findPosVals(val, front=""):
+	posibilities = [];
+	if not "X" in val:
+		return front + val;
+	for i, v in enumerate(val):
+		if v == "X":
+			tempV = val;
+			posibilities.append(findPosVals("1" + tempV[i + 1:], front=front + tempV[:i]));
+			posibilities.append(findPosVals("0" + tempV[i + 1:], front=front + tempV[:i]));
+			break;
+	return posibilities;
 
+
+
+def makeVal(val, mask):
+	val = bin(val)[2:].zfill(36);
+	finalVal = "";
+	for p in zip(val, mask):
+		if p[1] == "0":
+			finalVal += p[0];
+		else:
+			finalVal += p[1];
+	val = flatten(findPosVals(finalVal));
+	return [int(v, 2) for v in val];
 
 
 # Main Method
 # Load File
-sampleText = """""".split("\n")
-with open("day12.txt") as f:
+sampleText = """mask = 000000000000000000000000000000X1001X
+mem[42] = 100
+mask = 00000000000000000000000000000000X0XX
+mem[26] = 1""".split("\n")
+with open("day14.txt") as f:
 	fInput = [sampleText, f.readlines()];
 
 # Main method
@@ -149,8 +170,23 @@ for text in fInput:
 
 	answer = 0;
 	# END OF PREDEFINED
+	mask = "";
+	mem = {};
 
-	# Main code here
+	for code in text:
+		cmd = code.split(" = ")[0];
+		val = code.split(" = ")[1];
+		if cmd == "mask":
+			mask = val.strip();
+			print("Current mask combinations: %d" %pow(2, mask.count("X")));
+		elif cmd.startswith("mem"):
+			startingAd = int("".join(cmd.split("[")[1][:-1]));
+			for addy in makeVal(startingAd, mask):
+				mem[addy] = int(val.strip());
+		print(round((text.index(code)/len(text)) * 100, 2));
+
+	answer = sum(mem.values());
+
 
 	# BEGINNING OF PREDEFINED
 	print(answer);

@@ -1,11 +1,6 @@
 # Common Inputs
 import string;
 import os;
-from numpy import prod;
-from copy import deepcopy;
-from math import cos, sin, degrees, radians, gcd;
-from numpy import prod;
-
 
 
 # Classes and functions
@@ -121,24 +116,24 @@ def getRangeOfNumbsThatSum(lst, sSum, max=100):
 	return False;
 
 
-def flatten(lst):
-	flatList = []
-	if type(lst) == list:
-		for i in range(len(lst)):
-			flatList += flatten(lst[i]);
-	else:
-		flatList.append(lst);
-	return flatList;
-
-
-# END OF PREDEFINED FUNCTIONS
-
+def makeVal(val, mask):
+	val = bin(val)[2:].zfill(36)
+	finalVal = "";
+	for p in zip(val, mask):
+		if p[1] == "X":
+			finalVal += p[0];
+		else:
+			finalVal += p[1];
+	return int(finalVal, 2);
 
 
 # Main Method
 # Load File
-sampleText = """""".split("\n")
-with open("day12.txt") as f:
+sampleText = """mask = XXXXXXXXXXXXXXXXXXXXXXXXXXXXX1XXXX0X
+mem[8] = 11
+mem[7] = 101
+mem[8] = 0""".split("\n")
+with open("day14.txt") as f:
 	fInput = [sampleText, f.readlines()];
 
 # Main method
@@ -149,8 +144,19 @@ for text in fInput:
 
 	answer = 0;
 	# END OF PREDEFINED
+	mask = "";
+	mem = {};
 
-	# Main code here
+	for code in text:
+		cmd = code.split(" = ")[0];
+		val = code.split(" = ")[1];
+		if cmd == "mask":
+			mask = val.strip();
+		elif cmd.startswith("mem"):
+			mem[int("".join(cmd.split("[")[1][:-1]))] = makeVal(int(val.strip()), mask);
+
+	answer = sum(mem.values());
+
 
 	# BEGINNING OF PREDEFINED
 	print(answer);

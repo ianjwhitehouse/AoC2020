@@ -1,11 +1,6 @@
 # Common Inputs
 import string;
 import os;
-from numpy import prod;
-from copy import deepcopy;
-from math import cos, sin, degrees, radians, gcd;
-from numpy import prod;
-
 
 
 # Classes and functions
@@ -120,25 +115,11 @@ def getRangeOfNumbsThatSum(lst, sSum, max=100):
 		rangeSize += 1;
 	return False;
 
-
-def flatten(lst):
-	flatList = []
-	if type(lst) == list:
-		for i in range(len(lst)):
-			flatList += flatten(lst[i]);
-	else:
-		flatList.append(lst);
-	return flatList;
-
-
-# END OF PREDEFINED FUNCTIONS
-
-
-
 # Main Method
 # Load File
-sampleText = """""".split("\n")
-with open("day12.txt") as f:
+sampleText = """939
+7,13,x,x,59,x,31,19""".split("\n")
+with open("day13.txt") as f:
 	fInput = [sampleText, f.readlines()];
 
 # Main method
@@ -150,7 +131,26 @@ for text in fInput:
 	answer = 0;
 	# END OF PREDEFINED
 
-	# Main code here
+
+	curTime = int(text[0]);
+	startTime = curTime;
+	busses = text[1].split(",");
+	newBusses = []
+	for bus in busses:
+		try:
+			newBusses.append(int(bus));
+		except:
+			pass;
+	while True:
+		success = False;
+		for bus in newBusses:
+			if curTime % bus == 0:
+				answer = (curTime - startTime) * bus;
+				success = True;
+				break;
+		if success:
+			break;
+		curTime += 1;
 
 	# BEGINNING OF PREDEFINED
 	print(answer);

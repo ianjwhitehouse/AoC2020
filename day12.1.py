@@ -1,11 +1,7 @@
 # Common Inputs
 import string;
 import os;
-from numpy import prod;
-from copy import deepcopy;
-from math import cos, sin, degrees, radians, gcd;
-from numpy import prod;
-
+from math import cos, sin, degrees, radians;
 
 
 # Classes and functions
@@ -120,24 +116,13 @@ def getRangeOfNumbsThatSum(lst, sSum, max=100):
 		rangeSize += 1;
 	return False;
 
-
-def flatten(lst):
-	flatList = []
-	if type(lst) == list:
-		for i in range(len(lst)):
-			flatList += flatten(lst[i]);
-	else:
-		flatList.append(lst);
-	return flatList;
-
-
-# END OF PREDEFINED FUNCTIONS
-
-
-
 # Main Method
 # Load File
-sampleText = """""".split("\n")
+sampleText = """F10
+N3
+F7
+R90
+F11""".split("\n")
 with open("day12.txt") as f:
 	fInput = [sampleText, f.readlines()];
 
@@ -149,15 +134,38 @@ for text in fInput:
 
 	answer = 0;
 	# END OF PREDEFINED
+	heading = 0;
+	pos = [0, 0];
 
-	# Main code here
-
+	for line in text:
+		cmd = line[0];
+		val = int(line[1:]);
+		if cmd == "N":
+			pos[1] += val;
+		elif cmd == "S":
+			pos[1] -= val;
+		elif cmd == "E":
+			pos[0] += val;
+		elif cmd == "W":
+			pos[0] -= val;
+		elif cmd == "L":
+			heading += val;
+			if heading > 360:
+				heading = heading - 360;
+		elif cmd == "R":
+			heading -= val;
+			if heading < 0:
+				heading = 360 + heading;
+		elif cmd == "F":
+			pos[0] += (val * cos(radians(heading)));
+			pos[1] += (val * sin(radians(heading)));
+		answer = abs(pos[0]) + abs(pos[1]);
 	# BEGINNING OF PREDEFINED
-	print(answer);
+	print(round(answer));
 
 	# Uncomment for debugger
 	# print("Saved at %s" % db.startingFile);
 	# del db;
 
 # Return answer
-os.system('echo ' + str(answer).strip() + '| clip');
+os.system('echo ' + str(round(answer)).strip() + '| clip');

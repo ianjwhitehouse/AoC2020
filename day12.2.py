@@ -1,11 +1,7 @@
 # Common Inputs
 import string;
 import os;
-from numpy import prod;
-from copy import deepcopy;
-from math import cos, sin, degrees, radians, gcd;
-from numpy import prod;
-
+from math import cos, sin, acos, asin, degrees, radians, sqrt, pow;
 
 
 # Classes and functions
@@ -120,24 +116,13 @@ def getRangeOfNumbsThatSum(lst, sSum, max=100):
 		rangeSize += 1;
 	return False;
 
-
-def flatten(lst):
-	flatList = []
-	if type(lst) == list:
-		for i in range(len(lst)):
-			flatList += flatten(lst[i]);
-	else:
-		flatList.append(lst);
-	return flatList;
-
-
-# END OF PREDEFINED FUNCTIONS
-
-
-
 # Main Method
 # Load File
-sampleText = """""".split("\n")
+sampleText = """F10
+N3
+F7
+R90
+F11""".split("\n")
 with open("day12.txt") as f:
 	fInput = [sampleText, f.readlines()];
 
@@ -149,15 +134,50 @@ for text in fInput:
 
 	answer = 0;
 	# END OF PREDEFINED
+	wPos = [10, 1]; # [positive is east, positive is north]
+	shipPos = [0, 0]; # [positive is east offset, positive is north offset]
 
-	# Main code here
-
+	for line in text:
+		cmd = line[0];
+		val = int(line.strip()[1:]);
+		if cmd == "N":
+			wPos[1] += val;
+		elif cmd == "S":
+			wPos[1] -= val;
+		elif cmd == "E":
+			wPos[0] += val;
+		elif cmd == "W":
+			wPos[0] -= val;
+		elif cmd == "L":
+			if val == 90:
+				wPos = [-1 * wPos[1], wPos[0]];
+			elif val == 180:
+				wPos = [-1 * wPos[0], -1 * wPos[1]];
+			elif val == 270:
+				wPos = [wPos[1], -1 * wPos[0]];
+			else:
+				print("Big issue)");
+		if cmd == "R":
+			if val % 360 == 90:
+				wPos = [wPos[1], -1 * wPos[0]];
+			elif val % 360 == 180:
+				wPos = [-1 * wPos[0], -1 * wPos[1]];
+			elif val % 360 == 270:
+				wPos = [-1 * wPos[1], wPos[0]];
+			else:
+				print("Big issue)");
+		elif cmd == "F":
+			shipPos[0] += (val * wPos[0]);
+			shipPos[1] += (val * wPos[1]);
+		answer = abs(shipPos[0]) + abs(shipPos[1]);
 	# BEGINNING OF PREDEFINED
-	print(answer);
+	print(wPos)
+	print(shipPos);
+	print(round(answer));
 
 	# Uncomment for debugger
 	# print("Saved at %s" % db.startingFile);
 	# del db;
 
 # Return answer
-os.system('echo ' + str(answer).strip() + '| clip');
+os.system('echo ' + str(round(answer)).strip() + '| clip');
