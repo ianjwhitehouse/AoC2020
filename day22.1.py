@@ -132,27 +132,7 @@ def flatten(lst):
 
 
 # END OF PREDEFINED FUNCTIONS
-def recCombat(players):
-	allRounds = [];
-	while all([len(card) > 0 for card in players.values()]):
-		if players in allRounds:
-			return 1, players;
-		elif players[1][0] <= len(players[1][1:]) and players[2][0] <= len(players[2][1:]):
-			allRounds.append({key: item[:] for key, item in players.items()});
-			nPlayer1 = players[1][1:players[1][0]+1];
-			nPlayer2 = players[2][1:players[2][0]+1];
-			winner, c = recCombat({1:nPlayer1, 2:nPlayer2});
-		else:
-			allRounds.append({key: item[:] for key, item in players.items()});
-			winner = 1 if players[1][0] > players[2][0] else 2;
 
-		play1Card = players[1].pop(0);
-		play2Card = players[2].pop(0);
-		if winner == 1:
-			players[1] += [play1Card, play2Card];
-		else:
-			players[2] += [play2Card, play1Card];
-	return 1 if len(players[2]) == 0 else 2, players;
 
 
 # Main Method
@@ -170,16 +150,7 @@ Player 2:
 4
 7
 10
-""".split("\n");
-# sampleText = """Player 1:
-# 43
-# 19
-#
-# Player 2:
-# 2
-# 29
-# 14
-# """.split("\n");
+""".split("\n")
 with open("day22.txt") as f:
 	fInput = [sampleText, f.readlines()];
 
@@ -205,7 +176,12 @@ for text in fInput:
 		else:
 			cards.append(int(line));
 
-	winner, players = recCombat(players);
+	while all([len(card) > 0 for card in players.values()]):
+		roundCards = {};
+		for key, item in players.items():
+			roundCards[key] = item.pop(0);
+		top = list(roundCards.values()).index(max(roundCards.values()));
+		players[top+1] += sorted(roundCards.values(), reverse=True);
 
 	for val in players.values():
 		if len(val) > 0:
