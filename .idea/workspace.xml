@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="651a4541-d0bd-4bba-ab9a-c3ff900bb509" name="Default Changelist" comment="" />
+    <list default="true" id="651a4541-d0bd-4bba-ab9a-c3ff900bb509" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Citadel/HackerRank/romanNumerals.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,6 +47,7 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="JupyterTrust" id="a1cdd784-c81c-4827-b9d3-102ecc38e102" />
   <component name="ProjectId" id="1m0uFBBXIhvvRrSSL3H5me36B3B" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -34,6 +57,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -48,29 +72,7 @@
       <recent name="C:\Users\ianwh\Documents\AoC2020" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.day25.1">
-    <configuration name="day23.1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="AoC2020" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day23.1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.romanNumerals">
     <configuration name="day23.2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="AoC2020" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -159,13 +161,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="romanNumerals" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="AoC2020" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Citadel/HackerRank" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Citadel/HackerRank/romanNumerals.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.romanNumerals" />
         <item itemvalue="Python.day25.1" />
         <item itemvalue="Python.day24.2" />
         <item itemvalue="Python.day24.1" />
         <item itemvalue="Python.day23.2" />
-        <item itemvalue="Python.day23.1" />
       </list>
     </recent_temporary>
   </component>
@@ -181,6 +205,8 @@
       <workItem from="1608699210335" duration="4746000" />
       <workItem from="1608778720540" duration="15000" />
       <workItem from="1608817695183" duration="11232000" />
+      <workItem from="1626143452550" duration="2933000" />
+      <workItem from="1626219710221" duration="59000" />
     </task>
     <servers />
   </component>
@@ -198,6 +224,48 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="744" height="466" key="DebuggerActiveHint" timestamp="1626144427459">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="744" height="466" key="DebuggerActiveHint/-1366.304.1366.728/1920.301.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1626144427459" />
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1626152164360">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom/-1366.304.1366.728/1920.301.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1626152164360" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1626152164360">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.center/-1366.304.1366.728/1920.301.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1626152164360" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1626152164360">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.left/-1366.304.1366.728/1920.301.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1626152164360" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1626152164360">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.right/-1366.304.1366.728/1920.301.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1626152164360" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1626152164360">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/-1366.304.1366.728/1920.301.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1626152164360" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1626152164360">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/-1366.304.1366.728/1920.301.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1626152164360" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1626152164360">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/-1366.304.1366.728/1920.301.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1626152164360" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1626152164360">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/-1366.304.1366.728/1920.301.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1626152164360" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1626143601310">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/-1366.304.1366.728/1920.301.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1626143601310" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -241,12 +309,13 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/AoC2020$day23_2.coverage" NAME="day23.2 Coverage Results" MODIFIED="1608703740188" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AoC2020$day22_1.coverage" NAME="day22.1 Coverage Results" MODIFIED="1608646420332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AoC2020$day24_2.coverage" NAME="day24.2 Coverage Results" MODIFIED="1608840458941" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AoC2020$day24_1.coverage" NAME="day24.1 Coverage Results" MODIFIED="1608838818003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AoC2020$day23_1.coverage" NAME="day23.1 Coverage Results" MODIFIED="1608702105336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AoC2020$day21_2.coverage" NAME="day21.2 Coverage Results" MODIFIED="1608655969128" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AoC2020$day24_1.coverage" NAME="day24.1 Coverage Results" MODIFIED="1608838818003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AoC2020$day25_1.coverage" NAME="day25.1 Coverage Results" MODIFIED="1608874620394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AoC2020$day21_2.coverage" NAME="day21.2 Coverage Results" MODIFIED="1608655969128" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AoC2020$day23_2.coverage" NAME="day23.2 Coverage Results" MODIFIED="1608703740188" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AoC2020$day24_2.coverage" NAME="day24.2 Coverage Results" MODIFIED="1608840458941" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AoC2020$day22_1.coverage" NAME="day22.1 Coverage Results" MODIFIED="1608646420332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AoC2020$romanNumerals.coverage" NAME="romanNumerals Coverage Results" MODIFIED="1626145785365" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Citadel/HackerRank" />
   </component>
 </project>
